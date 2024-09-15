@@ -1,16 +1,16 @@
 import { handleAuth } from "@kinde-oss/kinde-auth-nextjs/server";
 
 // Mock ContentStore for demonstration
-const ContentStore = {
-  collections: {
-    pages: {
-      all: async () => [
-        { slug: 'page1' },
-        { slug: 'page2' }
-      ]
-    }
-  }
-};
+//const ContentStore = {
+//  collections: {
+//   pages: {
+//      all: async () => [
+//        { slug: 'page1' },
+//        { slug: 'page2' }
+//      ]
+//    }
+//  }
+//};
 
 // Add a custom handler for logging the environment variable
 export const GET = (req: Request, res: Response) => {
@@ -22,24 +22,25 @@ export const GET = (req: Request, res: Response) => {
 };
 
 // Define the Params type
-type Params = {
-  slug: string;
-};
+//type Params = {
+//  slug: string;
+//};
 
 // Generate static params
-export async function generateStaticParams(): Promise<Params[]> {
-  try {
-    const pages = await ContentStore.collections.pages.all();
+//export async function generateStaticParams(): Promise<Params[]> {
+// try {
+//    const pages = await ContentStore.collections.pages.all();
 
-    if (!pages || pages.length === 0) {
-      return [{ slug: 'not-found' }];
-    }
+//    if (!pages || pages.length === 0) {
+//      return [{ slug: 'not-found' }];
+ //   }
 
-    return pages.map(page => ({
-      slug: page.slug,
-    }));
-  } catch (error) {
-    console.error("Error fetching pages:", error);
-    return [{ slug: 'not-found' }];
-  }
-}
+ //   return pages.map(page => ({
+ //     slug: page.slug,
+ //   }));
+//  } catch (error) {
+//    console.error("Error fetching pages:", error);
+ //   return [{ slug: 'not-found' }];
+//  }
+//}
+
